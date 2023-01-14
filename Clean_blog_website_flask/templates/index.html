@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block body %}
+<link rel="stylesheet" href="../static/css/margin.css">
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('{{url_for('static',filename='img/home-bg.jpg')}}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>{{params['blog_name']}}</h1>
+                    <span class="subheading">{{params['tag_line']}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <!-- TODO: fetch data by for Loop -->
+            <!-- Post preview-->
+            {% for post in posts %}
+            <!-- <li><a href="/post/{{post.slug}}"></a></li> -->
+            <div class="post-preview">
+                <a href="/post/{{post.slug}}">
+                    <h2 class="post-title">{{post.title}}</h2>
+                    <h3 class="post-subtitle">{{post.tagline}}</h3>
+                    <p class="post-meta">
+                    </a>
+                        Posted by
+                        <a href="#!">Admin</a>
+                        on {{post.date}}
+                    </p>
+                    {{post.content[0:130]}}.....
+            </div>
+            <!-- Divider-->
+
+            {% endfor %}
+
+            <!-- Pager-->
+            <hr>
+            <div class="clearfix">
+                <a class="btn btn-primary text-uppercase float-left" href="{{prev}}">&lAarr; Previous </a>
+                {%if number!=0%}
+                <a class="btn btn-primary text-uppercase float-right marginleft " href="{{next}}"> Next &rArr;<div></div></a>
+                {%endif%}
+                <!-- {%if number!=0%}
+                <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase float-left" href="#!">Newer Posts</a></div>
+                {%endif%} -->
+                <!-- <div class="d-flex justify-content-endmb-4"><a class="btn btn-primary text-uppercase" href="#!"> Older Posts</a> {%if number!=0%}<div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase marginleft" href="#!">Newer Posts</a></div>{%endif%}</div> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>{{params['blog_name']}}</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS    yha hum CDN bhi use kar sakte hai -->
+    <link href="{{url_for('static',filename='css/min.css')}}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/signin.css')}}">
+  </head>
+
+  <body class="text-center">
+    <form class="form-signin" action="/dashbord" method="POST">
+        {%set fname = 'img/'+params['login_img']%}
+      <img class="mb-4" src="{{url_for('static',filename=fname)}}" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Admin Login</h1>
+      <label for="uname" class="sr-only">User Name</label>
+      <input type="text" id="uname" name="uname" class="form-control" placeholder="User Name" required autofocus>
+      <label for="pass" class="sr-only">Password</label>
+      <input type="text" id="pass" name="pass" class="form-control" placeholder="Password" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">&copy;{{params['blog_name']}} 2017-2018</p>
+    </form>
+  </body>
+</html>
+
+
+

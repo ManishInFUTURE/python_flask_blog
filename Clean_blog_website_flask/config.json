@@ -1,0 +1,26 @@
+{
+    "params":
+    {
+        "local_server": "True",
+        "local_uri": "mysql://root:@localhost/codingthunder",
+        "prod_uri": "mysql://root:@localhost/codingthunder",
+        "fb_uri":"https://www.facebook.com/manishmehta",
+        "twt_uri":"https://www.facebook.com/manishmehta",
+        "git_uri":"https://www.facebook.com/manishmehta",
+        "blog_name":"CodingThunder",
+        "tag_line":"Heaven For Programmer",
+        "gmail_user":"manishkumarmehta606@gmail.com",
+        "gmail_password2":"9549057000",
+        "gmail_password":"qveqgavqrwdjrlkx",
+        "about_text":"hello my name is manish kumar and i love programing so help me guys",
+        "number_of_posts": 2,
+        "login_img": "login.svg",
+        "admin_user":"Ram",
+        "admin_password":"sita",
+        "upload_location":"D:\\python\\Clean_blog_website_flask"
+
+    }
+
+
+
+}
